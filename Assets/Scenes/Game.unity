@@ -1341,7 +1341,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03f1d996a2825841b96f685bfedf905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pools: []
+  Pools:
+  - Tag: igloo
+    Prefab: {fileID: 7249141140490077719, guid: 48597647f8f26494fa7a9288f98312a0,
+      type: 3}
+    Size: 5
+  - Tag: snowman
+    Prefab: {fileID: 7249141140490077719, guid: 1af7042b6cc43ad49a2725f0df7d7014,
+      type: 3}
+    Size: 5
 --- !u!4 &782230951
 Transform:
   m_ObjectHideFlags: 0
@@ -7293,7 +7301,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Seasons Greetings
+  m_Text: End of the Journey
 --- !u!222 &1471669057
 CanvasRenderer:
   m_ObjectHideFlags: 0

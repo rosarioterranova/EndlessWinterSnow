@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -107,6 +108,7 @@ public class GameManager : Singleton<GameManager>
         m_Level = 1;
         int EnemyToNextLevel = 5;
         yield return new WaitForSeconds(2); //first play
+        StartCoroutine(SpawnProp());
         while (!m_IsPlayerDead)
         {
             while (!m_EnemiesSpawned.Equals(EnemyToNextLevel) && !m_IsPlayerDead)
@@ -122,16 +124,33 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    IEnumerator SpawnProp()
+    {
+        while (!m_IsPlayerDead)
+        {
+            yield return new WaitForSeconds(UnityEngine.Random.Range(4,14));
+            int randomProp = UnityEngine.Random.Range(0, 2);
+            switch (randomProp)
+            {
+                case 0:
+                    ObjectPooler.Instance.SpawnFromPool("igloo", new Vector2(m_Character.transform.position.x + 15f, .5f), Quaternion.identity);
+                    break;
+                case 1:
+                    ObjectPooler.Instance.SpawnFromPool("snowman", new Vector2(m_Character.transform.position.x + 15f, .0f), Quaternion.identity);
+                    break;
+            }
+        }
+    }
+
     void SpawnEnemy()
     {
-
         //Random Spawn Star
-        if (Random.Range(1, 6).Equals(1))
+        if (UnityEngine.Random.Range(1, 6).Equals(1))
         {
             GameObject star = Instantiate(m_Star);
             float xStarPosition = m_Character.transform.position.x + 15;
             float yStarPosition = 0;
-            switch (Random.Range(0, 2))
+            switch (UnityEngine.Random.Range(0, 2))
             {
                 case 0:
                     yStarPosition = m_EnemyPositionLow;
@@ -148,7 +167,7 @@ public class GameManager : Singleton<GameManager>
         }
         else
         {
-            int index = Random.Range(0, m_Level);
+            int index = UnityEngine.Random.Range(0, m_Level);
             GameObject enemy = Instantiate(m_Enemies[index]);
             float xEnemyPosition = m_Character.transform.position.x + 15;
             float yEnemyPosition = 0;
@@ -164,7 +183,7 @@ public class GameManager : Singleton<GameManager>
                     yEnemyPosition = m_EnemyPositionMedium;
                     break;
                 case 3: //Snowman
-                    xEnemyPosition += Random.Range(-4, 2);
+                    xEnemyPosition += UnityEngine.Random.Range(-4, 2);
                     yEnemyPosition = m_EnemyPositionLow;
                     break;
                 case 4: //Polar Bear
