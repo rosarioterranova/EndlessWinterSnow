@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4001c6dcaffb146840723daeaf956c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  m_Speed: 5
 --- !u!70 &6476319489548961759
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -59,8 +59,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.38709593, y: -0.34333423}
-  m_Size: {x: 1.8684475, y: 1.7136208}
+  m_Offset: {x: 0.22699176, y: -0.3132642}
+  m_Size: {x: 1.5332189, y: 1.5332189}
   m_Direction: 1
 --- !u!1 &4327009457317591752
 GameObject:

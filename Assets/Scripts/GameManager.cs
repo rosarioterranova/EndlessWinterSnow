@@ -111,12 +111,9 @@ public class GameManager : Singleton<GameManager>
         StartCoroutine(SpawnProp());
         while (!m_IsPlayerDead)
         {
-            while (!m_EnemiesSpawned.Equals(EnemyToNextLevel) && !m_IsPlayerDead)
-            {
-                SpawnEnemy();
-                yield return new WaitForSeconds(2);
-            }
-            if (!m_Level.Equals(5))
+            SpawnEnemy();
+            yield return new WaitForSeconds(2);
+            if ( m_EnemiesSpawned.Equals(EnemyToNextLevel) && m_Level != m_Enemies.Count)
             {
                 m_Level += 1;
                 EnemyToNextLevel += 5;
@@ -128,7 +125,7 @@ public class GameManager : Singleton<GameManager>
     {
         while (!m_IsPlayerDead)
         {
-            yield return new WaitForSeconds(UnityEngine.Random.Range(4,14));
+            yield return new WaitForSeconds(UnityEngine.Random.Range(6,14));
             int randomProp = UnityEngine.Random.Range(0, 2);
             switch (randomProp)
             {

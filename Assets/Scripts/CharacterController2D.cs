@@ -74,7 +74,6 @@ public class CharacterController2D : MonoBehaviour
 				crouch = true;
 			}
 		}
-        Debug.Log("Crouching: " + crouch);
         //only control the player if grounded or airControl is turned on
         if (m_Grounded || m_AirControl)
 		{
