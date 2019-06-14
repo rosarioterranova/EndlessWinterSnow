@@ -126,7 +126,7 @@ public class GameManager : Singleton<GameManager>
         while (!m_IsPlayerDead)
         {
             yield return new WaitForSeconds(UnityEngine.Random.Range(6,14));
-            int randomProp = UnityEngine.Random.Range(0, 2);
+            int randomProp = UnityEngine.Random.Range(0, 3);
             switch (randomProp)
             {
                 case 0:
@@ -134,6 +134,9 @@ public class GameManager : Singleton<GameManager>
                     break;
                 case 1:
                     ObjectPooler.Instance.SpawnFromPool("snowman", new Vector2(m_Character.transform.position.x + 15f, .0f), Quaternion.identity);
+                    break;
+                case 2:
+                    ObjectPooler.Instance.SpawnFromPool("wolf", new Vector2(m_Character.transform.position.x + 15f, 0f), Quaternion.identity);
                     break;
             }
         }

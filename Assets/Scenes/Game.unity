@@ -1345,11 +1345,15 @@ MonoBehaviour:
   - Tag: igloo
     Prefab: {fileID: 7249141140490077719, guid: 48597647f8f26494fa7a9288f98312a0,
       type: 3}
-    Size: 5
+    Size: 3
   - Tag: snowman
     Prefab: {fileID: 7249141140490077719, guid: 1af7042b6cc43ad49a2725f0df7d7014,
       type: 3}
-    Size: 5
+    Size: 3
+  - Tag: wolf
+    Prefab: {fileID: 7249141140490077719, guid: 0a9c1610ef24a854fb1e9f902c938414,
+      type: 3}
+    Size: 3
 --- !u!4 &782230951
 Transform:
   m_ObjectHideFlags: 0
