@@ -16,7 +16,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] GameObject m_Character;
     [SerializeField] GameObject m_Shadow;
     [SerializeField] GameObject m_VirtualCamGame;
-    [SerializeField] GameObject m_GameCanvas;
+    [SerializeField] GameObject m_TouchController;
     [SerializeField] GameObject m_TutorialCanvas;
     [SerializeField] Text m_TutorialText;
     [SerializeField] GameObject m_LeftHandTutorial;
@@ -57,7 +57,6 @@ public class GameManager : Singleton<GameManager>
         m_Character.SetActive(true);
         m_Shadow.SetActive(true);
         m_VirtualCamGame.SetActive(true);
-        m_GameCanvas.SetActive(true);
         StartCoroutine(StartTutorial());
     }
 
@@ -65,6 +64,7 @@ public class GameManager : Singleton<GameManager>
     {
         m_IsTutorial = true;
         yield return new WaitForSeconds(3);
+        m_TouchController.SetActive(true);
         m_TutorialText.text = "Hold this side to crouch";
         m_TutorialCanvas.SetActive(true);
         m_LeftHandTutorial.SetActive(true);
@@ -226,7 +226,7 @@ public class GameManager : Singleton<GameManager>
         m_Character.SetActive(false);
         m_Shadow.SetActive(false);
         m_VirtualCamGame.SetActive(false);
-        m_GameCanvas.SetActive(false);
+        m_TouchController.SetActive(false);
         yield return new WaitForSeconds(2f);
         m_FadeWhite.SetBool("FadeIN", false);
     }

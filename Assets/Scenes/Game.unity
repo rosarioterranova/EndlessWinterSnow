@@ -593,6 +593,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467245861}
   m_CullTransparentMesh: 0
+--- !u!1 &474098534 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 475176953324749271, guid: 9c02747903aa950468e62e09b7791c82,
+    type: 3}
+  m_PrefabInstance: {fileID: 475176952012833334}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &486666401
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,7 +718,7 @@ MonoBehaviour:
   m_Character: {fileID: 1452209039}
   m_Shadow: {fileID: 679904404}
   m_VirtualCamGame: {fileID: 1379217333}
-  m_GameCanvas: {fileID: 1275580303}
+  m_TouchController: {fileID: 474098534}
   m_TutorialCanvas: {fileID: 486666401}
   m_TutorialText: {fileID: 732655697}
   m_LeftHandTutorial: {fileID: 1931893124}
@@ -7965,6 +7971,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TouchController
       objectReference: {fileID: 0}
+    - target: {fileID: 475176953324749271, guid: 9c02747903aa950468e62e09b7791c82,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 475176953324749268, guid: 9c02747903aa950468e62e09b7791c82,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8098,12 +8109,12 @@ PrefabInstance:
     - target: {fileID: 475176952100601896, guid: 9c02747903aa950468e62e09b7791c82,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -224.94528
       objectReference: {fileID: 0}
     - target: {fileID: 475176952100601896, guid: 9c02747903aa950468e62e09b7791c82,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 449.89056
       objectReference: {fileID: 0}
     - target: {fileID: 475176953595500026, guid: 9c02747903aa950468e62e09b7791c82,
         type: 3}
@@ -8128,12 +8139,12 @@ PrefabInstance:
     - target: {fileID: 475176953595500026, guid: 9c02747903aa950468e62e09b7791c82,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -224.94528
       objectReference: {fileID: 0}
     - target: {fileID: 475176953595500026, guid: 9c02747903aa950468e62e09b7791c82,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 449.89056
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c02747903aa950468e62e09b7791c82, type: 3}
